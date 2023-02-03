@@ -1,0 +1,73 @@
+doctype html
+html
+	head
+		title='복리계산기, 간편복리계산기, 주식복리계산기, 코인복리계산기'
+		meta(http-equiv='content-type' content='text/html; charset=utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=Edge')
+		meta(name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+		
+		meta(name='description' content='간편 복리계산기, 일복리계산기, 월복리계산기, 간편 수익률 계산기, 주식 수익률 계산기, 코인 수익률 계산기, 비트코인/주식 수익률')
+		meta(name='keywords' content='복리계산기,일복리계산기,월복리계산기,비트코인,비트코인/주식 수익률,주식,비트코인 복리계산기,주식 복리계산기,수익률 계산기')
+		meta(name='subject' content='간편 복리계산기, 일복리계산기, 월복리계산기, 간편 수익률 계산기, 주식 수익률 계산기, 코인 수익률 계산기, 비트코인/주식 수익률')
+
+		meta(property='og:type' content='website')
+		meta(property='og:title' content='복리계산기, 간편복리계산기, 주식복리계산기, 코인복리계산기')
+		meta(property='og:description' content='간편 복리계산기, 일복리계산기, 월복리계산기, 간편 수익률 계산기, 주식 수익률 계산기, 코인 수익률 계산기, 비트코인/주식 수익률')
+		
+		link(rel='stylesheet' href='/css/fontawesome/all.min.css')
+		link(rel='stylesheet' href='/css/adminLTE/adminlte.css')
+		style.
+			@media (max-width: 576px) {
+				#resultDiv .card-body {
+					padding : 5px;
+				}
+				#resultDiv .table th, .table td {
+					padding : 5px;
+					font-size : small;
+				}
+			}
+	body(class='layout-top-nav dark-mode')
+		div(class='wrapper')
+			nav(class='main-header navbar navbar-expand navbar-white navbar-light')
+				div(class='container')
+					div(class='collapse navbar-collapse order-3' id='navbarCollapse')
+						ul(class='navbar-nav')
+							li(class='nav-item')
+								a(class='nav-link' href='/loan') 복리계산기
+			div(class='content-wrapper')
+				div(class='content mt-1')
+					div(class='container')
+						div(class='row')
+							div(class='col')
+								div(class='card')
+									div(class='card-body')
+										div(class='form-group row')
+											label(class='col col-md-3 col-form-label' for='principal') 투자원금
+											div(class='col row')
+												input(class='form-control col' id='principal' name='principal' type='text' value='10000000' style='text-align: right;')
+												span(style='padding: 0.375rem 1px; text-align: right;') &nbsp;원
+										div(class='form-group row')
+											label(class='col col-md-3 col-form-label' for='rate') 목표수익률
+											div(class='col row')
+												input(class='form-control col' id='rate' name='rate' type='text' value='20' style='text-align: right;')
+												span(style='padding: 0.375rem 1px; text-align: right;') &nbsp;%
+										div(class='form-group row')
+											label(class='col col-md-3 col-form-label' for='period') 투자기간												
+											div(class='col row')
+												input(class='form-control col' id='period' name='period' type='text' value='20' style='text-align: right;')
+												select(class='form-control col col-md-2 ml-1' id='periodUnit' name='periodUnit' style='text-align: center;')
+													option(value='day') 일
+													option(value='month') 월
+													option(value='year') 년
+										div(class='form-group row')
+											button(class='col btn btn-primary' id='caculator' name='caculator') 계산
+								div(class='card' id='resultDiv' style='display:none')
+									div(class='card-body')
+										table(class='table table-bordered')
+											thead
+												th(style='text-align:center') 기간
+												th(style='text-align:center') 누적수익
+												th(style='text-align:center') 총금액
+												th(style='text-align:center') 수익률
+											tbody(id='tableBody')
+		script(src='/js/custom/loan.js')
